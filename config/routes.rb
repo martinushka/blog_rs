@@ -6,5 +6,7 @@ Rails.application.routes.draw do
 
   resources :pages
   resources :contacts
-  resources :articles
+  resources :articles do
+    resources :comments 
+  end
 end
