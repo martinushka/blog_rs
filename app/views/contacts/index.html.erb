@@ -1,0 +1,10 @@
+<h1>Все данные</h1>
+<hr>
+<% @contact.each do |contact|%>
+	<div class="here show contact">
+		<h3> <%= contact.email %> </h3>
+		<p> <%= contact.message %> </p>
+		<%= link_to 'Редактировать', contacts_path(contact), :class => 'btn btn-outline-primary' %>
+		<hr>
+	</div>
+<% end %>
