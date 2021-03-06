@@ -3,6 +3,15 @@
 
 <%= link_to "Показать все статьи", articles_path %>
 
+<h2>Comments</h2>
+<hr>
+<% @article.comments.each do |comment| %>
+	<i><%= comment.author %>: </i> 
+	<%= comment.body %> <br><hr>
+<% end %>
+
+<h2>Add comment</h2>
+
 <%= form_for([@article, @article.comments.build]) do |f| %>
 
   <p><%= f.label :author %>
