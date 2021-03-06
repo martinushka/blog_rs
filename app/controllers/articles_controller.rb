@@ -1,5 +1,9 @@
 class ArticlesController < ApplicationController
 
+  def index
+    @article = Article.all
+  end
+
   def new
   end
 
@@ -9,7 +13,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    
+
     if @article.valid?
       @article.save
       redirect_to @article
